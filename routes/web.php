@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\DeleiveryController;
 
 /*
@@ -39,3 +40,5 @@ Route::get('/index',[PostController::class,'index']);
 
 Route::post('/post/store',[PostController::class,'store']);
 Route::get('/create/post',[PostController::class,'create']);
+
+Route::get('/weather', [WeatherController::class, 'show'])->name('weather.show');
