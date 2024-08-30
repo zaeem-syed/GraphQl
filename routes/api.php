@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\MoviesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\WeatherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/movies',[MoviesController::class,'index']);
+
+
+Route::get('/weather', [WeatherController::class, 'fetchWeatherData']);
 

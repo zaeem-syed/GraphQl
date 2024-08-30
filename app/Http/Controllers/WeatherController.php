@@ -10,15 +10,26 @@ class WeatherController extends Controller
 {
     //
 
-    public function show(Request $request)
+    // public function show(Request $request)
+    // {
+    //     $city = $request->input('city', 'New York'); // Default city if none provided
+    //     $weatherData = Weather::getWeather($city);
+    //     return response()->json($weatherData);
+    // }
+
+
+    public function show()
     {
-        $city = $request->input('city', 'New York');
-        $weatherData = Weather::getWeather($city);
+        return view("weather.show");
+    }
 
-        if ($weatherData) {
-            return view('weather.show', ['weather' => $weatherData]);
-        }
+    // app/Http/Controllers/WeatherController.php
 
-        return redirect()->back()->with('error', 'Unable to fetch weather data.');
+    public function fetchWeatherData(Request $request)
+    {
+        $city = $request->input('city', 'New York'); // Default city if none provided
+        $weatherData = Weather::getWeather($city); // Use the facade to interact with the service
+
+        return response()->json($weatherData);
     }
 }
