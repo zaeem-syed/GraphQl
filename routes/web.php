@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\DeleiveryController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\PaymentController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeleiveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('/payment',[PaymentController::class,"pay"]);
 
 Route::get('/track',[DeleiveryController::class,'track_package']);
 route::get('/weight',[DeleiveryController::class,'total_weight']);
+
+
+Route::get('/show',[PostController::class,'show']);
