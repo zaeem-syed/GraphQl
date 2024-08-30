@@ -34,3 +34,8 @@ route::get('/weight',[DeleiveryController::class,'total_weight']);
 
 
 Route::get('/show',[PostController::class,'show']);
+
+Route::get('/index',[PostController::class,'index']);
+
+Route::post('/post/store',[PostController::class,'store']);
+Route::get('/create/post',[PostController::class,'create']);
