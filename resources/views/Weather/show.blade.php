@@ -45,9 +45,10 @@
                     success: function(response) {
                         const weather = response.weather[0];
                         const condition = weather.main.toLowerCase();
+                        console.log("the weather", condition);
                         const description = weather.description;
                         const temperature = response.main
-                        .temp; // Temperature directly from the API response
+                            .temp; // Temperature directly from the API response
 
                         // Display weather description and temperature
                         $('#weather-description').text(description);
@@ -63,6 +64,8 @@
                             animationPath = '/animations/rainy.json';
                         } else if (condition.includes('smoke')) {
                             animationPath = '/animations/smoke.json'; // Path to smoke animation
+                        } else if (condition.includes('drizzle')) {
+                            animationPath = '/animations/drizzle.json'; // Path to smoke animation
                         }
 
                         // Stop and clear the previous animation
