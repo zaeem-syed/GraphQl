@@ -14,10 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //  \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(10)->create();
 
         // Post::factory()->create(10);
-        Post::factory()->count(10)->create();
+        // Post::factory()->count(10)->create();
+
+        $this->call(AreaSeeder::class);
+        $this->call(ResturantSeeder::class);
+        $this->call(MenuSeeder::class);
+        $this->call(RiderSeeder::class);
+        // $this->call(orderSeeder::class);
+
 
 
 
